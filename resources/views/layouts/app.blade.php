@@ -340,7 +340,7 @@
 
                                                                     <a href="{{ route('shop.index', '13') }}">
 
-                                                                        <img src="https://www.lacuracao.pe/media/catalog/product/4/g/4gwtw1955lw_principal.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700"
+                                                                        <img src="https://oechsle.vteximg.com.br/arquivos/ids/15595357-800-800/20329480.jpg?v=638279765776870000"
                                                                             class="img-fluid"
                                                                             style="width:35px;height:35px
                                                                         alt="" />
@@ -446,11 +446,7 @@
                                             <li class="menu-icon">
                                                 <a href="{{ route('ofertas.index') }}">Ofertas</a>
                                             </li>
-                                            <li class="menu-icon">
-                                                <a href="{{ route('liquidacion.index') }}">
-                                                    Liquidación
-                                                </a>
-                                            </li>
+                                          
                                             <li>
                                                 <a href="{{ route('marcas.index') }}">Marcas</a>
                                             </li>
@@ -663,8 +659,129 @@
 
         <div class="ltn__utilize-overlay"></div>
     </div>
-    @yield('content') @yield('footer')
+    @yield('content') 
     <div class="body-wrapper">
+   
+        <!-- FOOTER AREA END -->
+
+        <!-- MODAL AREA START (Añadir a favorito Modal) -->
+        <div class="ltn__modal-area ltn__add-to-cart-modal-area">
+            <div class="modal fade" id="add_to_cart_modal" tabindex="-1">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="ltn__quick-view-modal-inner">
+                                <div class="modal-product-item">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="modal-add-to-cart-content clearfix">
+                                                <div class="modal-product-img">
+                                                    <img src="img/product/1.png" alt="#" />
+                                                </div>
+                                                <div class="modal-product-info">
+                                                    <h5>
+                                                        <a href="product-details.html">Heart's Desire</a>
+                                                    </h5>
+                                                    <p class="added-cart">
+                                                        <i class="fa fa-check-circle"></i>
+                                                        Successfully added to your Cart
+                                                    </p>
+                                                    <div class="btn-wrapper">
+                                                        <a href="cart.html" class="theme-btn-1 btn btn-effect-1">
+                                                            View Cart
+                                                        </a>
+                                                        <a href="checkout.html" class="theme-btn-2 btn btn-effect-2">
+                                                            Checkout
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- additional-info -->
+                                            <div class="additional-info d-none--">
+                                                <p>
+                                                    We want to give you
+                                                    <b>10% discount</b>
+                                                    for your first order,
+                                                    <br />
+                                                    Use (fiama10) discount code at checkout
+                                                </p>
+                                                <div class="payment-method">
+                                                    <img src="img/icons/payment.png" alt="#" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL AREA END -->
+
+        <!-- MODAL AREA START (Wishlist Modal) -->
+        <div class="ltn__modal-area ltn__add-to-cart-modal-area">
+            <div class="modal fade" id="liton_wishlist_modal" tabindex="-1">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="ltn__quick-view-modal-inner">
+                                <div class="modal-product-item">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="modal-product-img">
+                                                <img src="img/product/7.png" alt="#" />
+                                            </div>
+                                            <div class="modal-product-info">
+                                                <h5>
+                                                    <a href="product-details.html">
+                                                        Brake Conversion Kit
+                                                    </a>
+                                                </h5>
+                                                <p class="added-cart">
+                                                    <i class="fa fa-check-circle"></i>
+                                                    Successfully added to your Wishlist
+                                                </p>
+                                                <div class="btn-wrapper">
+                                                    <a href="wishlist.html" class="theme-btn-1 btn btn-effect-1">
+                                                        View Wishlist
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- additional-info -->
+                                            <div class="additional-info d-none">
+                                                <p>
+                                                    We want to give you
+                                                    <b>10% discount</b>
+                                                    for your first order,
+                                                    <br />
+                                                    Use discount code at checkout
+                                                </p>
+                                                <div class="payment-method">
+                                                    <img src="img/icons/payment.png" alt="#" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer class="ltn__footer-area">
             <div class="footer-top-area section-bg-5">
                 <div class="container">
@@ -866,127 +983,9 @@
                 </div>
             </div>
         </footer>
-        <!-- FOOTER AREA END -->
-
-        <!-- MODAL AREA START (Añadir a favorito Modal) -->
-        <div class="ltn__modal-area ltn__add-to-cart-modal-area">
-            <div class="modal fade" id="add_to_cart_modal" tabindex="-1">
-                <div class="modal-dialog modal-md" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="ltn__quick-view-modal-inner">
-                                <div class="modal-product-item">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="modal-add-to-cart-content clearfix">
-                                                <div class="modal-product-img">
-                                                    <img src="img/product/1.png" alt="#" />
-                                                </div>
-                                                <div class="modal-product-info">
-                                                    <h5>
-                                                        <a href="product-details.html">Heart's Desire</a>
-                                                    </h5>
-                                                    <p class="added-cart">
-                                                        <i class="fa fa-check-circle"></i>
-                                                        Successfully added to your Cart
-                                                    </p>
-                                                    <div class="btn-wrapper">
-                                                        <a href="cart.html" class="theme-btn-1 btn btn-effect-1">
-                                                            View Cart
-                                                        </a>
-                                                        <a href="checkout.html" class="theme-btn-2 btn btn-effect-2">
-                                                            Checkout
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- additional-info -->
-                                            <div class="additional-info d-none--">
-                                                <p>
-                                                    We want to give you
-                                                    <b>10% discount</b>
-                                                    for your first order,
-                                                    <br />
-                                                    Use (fiama10) discount code at checkout
-                                                </p>
-                                                <div class="payment-method">
-                                                    <img src="img/icons/payment.png" alt="#" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- MODAL AREA END -->
-
-        <!-- MODAL AREA START (Wishlist Modal) -->
-        <div class="ltn__modal-area ltn__add-to-cart-modal-area">
-            <div class="modal fade" id="liton_wishlist_modal" tabindex="-1">
-                <div class="modal-dialog modal-md" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="ltn__quick-view-modal-inner">
-                                <div class="modal-product-item">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="modal-product-img">
-                                                <img src="img/product/7.png" alt="#" />
-                                            </div>
-                                            <div class="modal-product-info">
-                                                <h5>
-                                                    <a href="product-details.html">
-                                                        Brake Conversion Kit
-                                                    </a>
-                                                </h5>
-                                                <p class="added-cart">
-                                                    <i class="fa fa-check-circle"></i>
-                                                    Successfully added to your Wishlist
-                                                </p>
-                                                <div class="btn-wrapper">
-                                                    <a href="wishlist.html" class="theme-btn-1 btn btn-effect-1">
-                                                        View Wishlist
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- additional-info -->
-                                            <div class="additional-info d-none">
-                                                <p>
-                                                    We want to give you
-                                                    <b>10% discount</b>
-                                                    for your first order,
-                                                    <br />
-                                                    Use discount code at checkout
-                                                </p>
-                                                <div class="payment-method">
-                                                    <img src="img/icons/payment.png" alt="#" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
+    @yield('footer')
     <!-- All JS Plugins -->
     <script src="{{ asset('asset/js/plugins.js') }}"></script>
 

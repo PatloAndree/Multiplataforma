@@ -168,7 +168,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area text-center">
-                            <h1 class="section-title section-title-border">Productos destacados</h1>
+                            <h1 class="section-title section-title-border">Productos destacados 21</h1>
                         </div>
                     </div>
                 </div>
@@ -176,11 +176,13 @@
                     <!-- ltn__product-item -->
                     @foreach ($productos as $producto)
                         <div class="col-lg-3 col-md-4 col-sm-6 col-6 ">
-
+                        @php
+                                                        $nuevoid = $producto['categoria_producto'];
+                                                    @endphp
                             <div class="ltn__product-item text-center borde-caja ">
                                 <div class="product-img">
                                     <input type="text" id="codigo_producto" value="<?php echo $producto['id']; ?>" class="d-none">
-                                    <a href="{{ route('shop.index') }}"><img src="{{ asset($producto['imagen_producto']) }}"
+                                    <a href="{{route('shop.index',$nuevoid)}}"><img src="{{ asset($producto['imagen_producto']) }}"
                                             alt="#"></a>
                                     <div class="product-badge">
                                         <ul>
@@ -218,7 +220,7 @@
                                     <div class="row ">
                                         <div class="col-md-12">
                                             <h2 class="product-title">
-                                                <a href="{{ route('shop.index') }}">
+                                                <a href="{{route('shop.index',$nuevoid)}}">
                                                     <?php echo Str::limit($producto['nombre_producto'], 20, '...'); ?>
                                                 </a>
                                             </h2>
@@ -371,7 +373,7 @@
                                                     <ul>
                                                         <li><strong>SKU:</strong> <span>12345</span></li>
                                                         <li>
-                                                            <strong>Categories:</strong>
+                                                            <strong>Categorias:</strong>
                                                             <span>
                                                                 <a href="#">Flower</a>
                                                             </span>
@@ -435,25 +437,27 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area text-center">
-                            <h1 class="section-title section-title-border">Productos top</h1>
+                            <h1 class="section-title section-title-border">Productos top celulares top</h1>
                         </div>
                     </div>
                 </div>
                 <div class="row ltn__product-slider-item-four-active slick-arrow-1">
                     <!-- ltn__product-item -->
                     @foreach ($celulares as $producto)
-                        <div class="col-9 ">
+                        <div class="col-9">
                             <div class="ltn__product-item text-center borde-caja ">
                                 <div class="product-img">
                                     @php
-                                        $nuevoid = $producto['id'];
+                                        $productoid =  $producto['id'];;
                                     @endphp
-                                    <a href="{{ route('productodetalle.index', $nuevoid) }}"><img
-                                            src="{{ asset($producto['imagen_producto']) }}" alt="#"
+                                    
+                                    <a href="{{ route('productodetalle.index', $productoid) }}">
+                                    <img
+                                            src="{{asset($producto['imagen_producto']) }}" alt="#"
                                             class="rounded mx-auto d-block"></a>
                                     <div class="product-badge">
                                         <ul>
-                                            <li class="badge-2">13%</li>
+                                            <li class="badge-2">{{ $productoid}}</li>
                                         </ul>
                                     </div>
                                     <div class="product-hover-action product-hover-action-2">
@@ -486,7 +490,7 @@
                                     <div class="row ">
                                         <div class="col-md-12">
                                             <h2 class="product-title">
-                                                <a href="{{ route('productodetalle.index') }}">
+                                                <a href="{{ route('productodetalle.index', $productoid) }}">
                                                     <?php echo Str::limit($producto['nombre_producto'], 20, '...'); ?>
                                                 </a>
                                             </h2>
@@ -542,7 +546,10 @@
                         <div class="col-12">
                             <div class="ltn__product-item text-center rounded-3 borde-caja ">
                                 <div class="product-img">
-                                    <a href="{{ route('productodetalle.index') }}" class="justify-content-center"><img
+                                @php
+                                                        $nuevoid = $producto['id'];
+                                                    @endphp
+                                    <a href="{{route('productodetalle.index',$nuevoid)}}" class="justify-content-center"><img
                                             src="{{ asset($producto['imagen_producto']) }}" alt="#"
                                             class="rounded mx-auto d-block"></a>
                                     <div class="product-badge">
@@ -580,7 +587,7 @@
                                     <div class="row ">
                                         <div class="col-md-12">
                                             <h2 class="product-title">
-                                                <a href="{{ route('productodetalle.index') }}">
+                                                <a href="{{route('productodetalle.index',$nuevoid)}}">
                                                     <?php echo Str::limit($producto['nombre_producto'], 20, '...'); ?>
                                                 </a>
                                             </h2>
@@ -619,7 +626,10 @@
                         <div class="col-12">
                             <div class="ltn__product-item text-center rounded-3 text-center borde-caja"">
                                 <div class=" product-img">
-                                    <a href="{{ route('productodetalle.index') }}" class="justify-content-center"><img
+                                @php
+                                                        $nuevoid = $producto['id'];
+                                                    @endphp
+                                    <a href="{{route('productodetalle.index',$nuevoid)}}" class="justify-content-center"><img
                                             src="{{ asset($producto['imagen_producto']) }}" alt="#"
                                             class="rounded mx-auto d-block"></a>
                                     <div class="product-badge">
@@ -657,7 +667,7 @@
                                     <div class="row ">
                                         <div class="col-md-12">
                                             <h2 class="product-title">
-                                                <a href="{{ route('productodetalle.index') }}">
+                                                <a href="{{route('productodetalle.index',$nuevoid)}}">
                                                     <?php echo Str::limit($producto['nombre_producto'], 20, '...'); ?>
                                                 </a>
                                             </h2>
@@ -696,7 +706,10 @@
                         <div class="col-12">
                             <div class="ltn__product-item text-center rounded-3 text-center borde-caja"">
                                 <div class=" product-img">
-                                    <a href="{{ route('productodetalle.index') }}" class="justify-content-center"><img
+                                @php
+                                                        $nuevoid = $producto['id'];
+                                                    @endphp
+                                    <a href="{{route('productodetalle.index',$nuevoid)}}" class="justify-content-center"><img
                                             src="{{ asset($producto['imagen_producto']) }}" alt="#"
                                             class="rounded mx-auto d-block"></a>
                                     <div class="product-badge">
@@ -734,7 +747,7 @@
                                     <div class="row ">
                                         <div class="col-md-12">
                                             <h2 class="product-title">
-                                                <a href="{{ route('productodetalle.index') }}">
+                                                <a href="{{route('productodetalle.index',$nuevoid)}}">
                                                     <?php echo Str::limit($producto['nombre_producto'], 20, '...'); ?>
                                                 </a>
                                             </h2>
@@ -831,8 +844,6 @@
             </div>
         </div>
 
-
-        <!-- PRODUCT SLIDER REFRIGERADORAS START -->
         <div class="ltn__product-slider-area ltn__product-gutter ">
             <div class="container ">
                 <div class="row">
@@ -848,7 +859,10 @@
                         <div class="col-12">
                             <div class="ltn__product-item text-center rounded-3 text-center borde-caja"">
                                 <div class=" product-img">
-                                    <a href="{{ route('productodetalle.index') }}" class="justify-content-center"><img
+                                @php
+                                                        $nuevoid = $producto['id'];
+                                                    @endphp
+                                    <a href="{{route('productodetalle.index',$nuevoid)}}" class="justify-content-center"><img
                                             src="{{ asset($producto['imagen_producto']) }}" alt="#"
                                             class="rounded mx-auto d-block"></a>
                                     <div class="product-badge">
@@ -886,7 +900,7 @@
                                     <div class="row ">
                                         <div class="col-md-12">
                                             <h2 class="product-title">
-                                                <a href="{{ route('productodetalle.index') }}">
+                                                <a href="{{route('productodetalle.index',$nuevoid)}}">
                                                     <?php echo Str::limit($producto['nombre_producto'], 20, '...'); ?>
                                                 </a>
                                             </h2>
@@ -909,7 +923,6 @@
         </div>
         <!-- TELEVISORES END -->
 
-        <!-- PRODUCT SLIDER COCINAS START -->
         <div class="ltn__product-slider-area ltn__product-gutter">
             <div class="container ">
                 <div class="row">
@@ -925,7 +938,10 @@
                         <div class="col-12">
                             <div class="ltn__product-item text-center rounded-3 borde-caja"">
                                 <div class=" product-img">
-                                    <a href="{{ route('productodetalle.index') }}" class="justify-content-center"><img
+                                @php
+                                                        $nuevoid = $producto['id'];
+                                                    @endphp
+                                    <a href="{{route('productodetalle.index',$nuevoid)}}" class="justify-content-center"><img
                                             src="{{ asset($producto['imagen_producto']) }}" alt="#"
                                             class="rounded mx-auto d-block"></a>
                                     <div class="product-badge">
@@ -963,7 +979,7 @@
                                     <div class="row ">
                                         <div class="col-md-12">
                                             <h2 class="product-title">
-                                                <a href="{{ route('productodetalle.index') }}">
+                                                <a href="{{route('productodetalle.index',$nuevoid)}}">
                                                     <?php echo Str::limit($producto['nombre_producto'], 20, '...'); ?>
                                                 </a>
                                             </h2>

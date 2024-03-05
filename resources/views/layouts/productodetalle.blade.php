@@ -173,7 +173,7 @@
                                             <table class="table  table-borderless ">
                                                 <thead class="thead-dark class=">
                                                     <tr>
-                                                        <th  class="fw-bold">Nombre</th>
+                                                        <th class="fw-bold">Nombre</th>
                                                         <th class=" text-center fw-bold">Precio</th>
                                                         <th class=" text-center fw-bold">Tienda</th>
                                                         <!-- <th>Link</th> -->
@@ -183,9 +183,9 @@
                                                     @foreach ($productosSimilares->sortBy('precio_actual') as $producto)
                                                         <tr>
                                                             <!-- <td class="w-25">
-                                                                </td> -->
-                                                                <td class="d-flex justify-content-start align-items-center">
-                                                                <img  src="{{ asset($producto['imagen_producto']) }}"
+                                                                    </td> -->
+                                                            <td class="d-flex justify-content-start align-items-center">
+                                                                <img src="{{ asset($producto['imagen_producto']) }}"
                                                                     alt="" style="width: 50px;">
                                                                 <p style="font-size:13.3px">
                                                                     <?php echo Str::limit($producto['nombre_producto'], 40, '...'); ?>
@@ -259,6 +259,86 @@
             </div>
         </div>
         <!-- SHOP DETAILS AREA END -->
+
+        <!-- PRODUCTS SLIDER START -->
+        <div class="h-50  container">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title-area text-center">
+                            <h1 class="section-title section-title-border">Productos a menor precio</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ltn__product-slider-item-four-active slick-arrow-1">
+                    <!-- ltn__product-item -->
+                    @foreach ($productos as $producto)
+                        <div class="col-9 ">
+                            <div class="ltn__product-item text-center borde-caja ">
+                                <div class="product-img">
+                                    @php
+                                        $nuevoid = $producto['id'];
+                                    @endphp
+                                    <a href="{{ route('productodetalle.index', $nuevoid) }}"><img
+                                            src="{{ asset($producto['imagen_producto']) }}" alt="#"
+                                            class="rounded mx-auto d-block"></a>
+                                    <div class="product-badge">
+                                        <ul>
+                                            <li class="badge-2">13%</li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-hover-action product-hover-action-2">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Quick View" data-bs-toggle="modal"
+                                                    data-bs-target="#quick_view_modal">
+                                                    <i class="icon-magnifier"></i>
+                                                </a>
+                                            </li>
+                                            <li class="add-to-cart">
+                                                <a href="#" title="Añadir a favorito" data-bs-toggle="modal"
+                                                    data-bs-target="#add_to_cart_modal">
+                                                    <span class="cart-text d-none d-xl-block">Añadir a favorito</span>
+                                                    <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
+                                                </a>
+                                            </li>
+                                            <!-- <li>
+                                                            <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                                                <i class="icon-shuffle"></i>
+                                                            </a>
+                                                        </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="row "> {{-- align-self-start --}}
+                                        <span class="fs-6 fw-bold "><?php echo $producto['marca_producto']; ?></span>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <h2 class="product-title">
+                                                <a href="{{ route('productodetalle.index', $nuevoid) }}">
+                                                    <?php echo Str::limit($producto['nombre_producto'], 20, '...'); ?>
+                                                </a>
+                                            </h2>
+                                            <div class="product-price">
+                                                <span>S/. <?php echo $producto['precio_actual']; ?></span>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="col-md-3 ">
+                                            <img src="{{asset('asset/img/brand-logo/curacao.png')}}" class="img-fluid" >
+                            </div> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ltn__product-item -->
+                    @endforeach
+
+                </div>
+
+            </div>
+        </div>
 
         <!-- SHOP DETAILS TAB AREA START -->
         <div class="ltn__shop-details-tab-area pb-60">
@@ -723,9 +803,6 @@
                 </div>
             </div>
         </div>
-        <!-- SHOP DETAILS TAB AREA END -->
-        <!-- BRAND LOGO AREA START -->
 
-        <!-- BRAND LOGO AREA END -->
     </div>
 @endsection

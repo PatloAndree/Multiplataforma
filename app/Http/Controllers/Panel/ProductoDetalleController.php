@@ -21,9 +21,13 @@ class ProductoDetalleController extends Controller
 
     public function index($productoid)
     {
+
+        
         $producto = Productos::where('status', 1)->where('id', $productoid)->first();
         $data['producto'] = Productos::where('status', 1)->where('id', $productoid)->first();
         $nombreCategoria = $producto->categoria->nombre_categoria;
+
+        $data['productos'] = Productos::where('status', 1)->where('categoria_producto',$producto->categoria_producto)->where('precio_actual', '<' , $producto->precio_actual )->get();    
         // print_r($nombreCategoria);
         // exit;
         $data['nombreCategoria'] = $nombreCategoria;

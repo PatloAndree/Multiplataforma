@@ -89,18 +89,6 @@
                 data-bs-bg="{{ asset('asset/img/slider/slider.jpg') }}">
                 <div class="ltn__slide-item-inner">
                     <div class="container">
-
-
-
-
-
-
-
-
-
-
-
-
                         <div class="row">
                             <div class="col-lg-12 align-self-center">
                                 <div class="slide-item-info">

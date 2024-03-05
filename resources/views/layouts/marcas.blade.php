@@ -24,32 +24,7 @@
     <!-- BREADCRUMB AREA END -->
 
     <div class="d-flex justify-content-center">
-        <h1>Resultados generales</h1>
-        <div>
-        </div>
-
-        <div>
-        <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Marca</th>
-                <th>Imagen</th>
-                <th>Link</th>
-                <th>Categoría</th>
-                <th>Tienda</th>
-                <th>Precio</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{
-               json_encode($productos)
-            }}
-           
-        </tbody>
-    </table>
-        </div>
+       <div>Hola</div>
     </div>
 
   
